@@ -15,5 +15,9 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit() {
     this.ingredients = this.shoppingListService.ingredients;
   }
+  onEditItem(index:number){
+    this.shoppingListService.startedEditing.next(index);
+  }
+  // 2. .next passing index of Ingreditent Array (like observable passing some data)
 
 }

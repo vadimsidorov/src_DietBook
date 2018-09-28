@@ -14,5 +14,10 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
 
   }
+  onAddToShoppingList(){
+    this.recipeService.addIngredientsToSHoppingList(this.recipe.ingredients)
+    console.log('U just click add to SL')
+  }
+  //Эта функция вызывается при клике на кнопку Add To the Shopping List
 
 }
