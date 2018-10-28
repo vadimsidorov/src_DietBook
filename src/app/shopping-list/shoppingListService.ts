@@ -20,12 +20,18 @@ export class shoppingListService{
           this.ingredients[index] = newIngredient;
           this.ingredientsChanged.next(this.ingredients.slice())
       //Making a copy of existing ingredients
-          
     }
+    addUpdateIngredient(index: number, newIngredient: Ingredient){
+        this.ingredients[index].amount = this.ingredients[index].amount + newIngredient.amount;
+        this.ingredientsChanged.next(this.ingredients.slice())
+    }
+    // если ингредиент уже есть и пользователь добавляет его опять, то количество ингредиента увеличивается
     addIngredients(ingredients: Ingredient[]){
         this.ingredients.slice()
         this.ingredients.push(...ingredients)
     }
-    
+    checkIfItemInCart(){
+        
+    }
 }
       

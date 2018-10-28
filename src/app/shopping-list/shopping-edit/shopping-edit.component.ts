@@ -38,29 +38,48 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   addOnItem(form: NgForm){
     const value = form.value;
     const newIng = new Ingredient (value.name, value.amount);
+    let length = this.shoppingListService.ingredients.length;
+    let i = 0;
     if (this.editMode){
       this.shoppingListService.updateIngredient(this.editItemIndex, newIng)
     } else{
-      this.shoppingListService.ingredients.push(newIng);
+      for(i; i<length; i++){
+        if (this.shoppingListService.ingredients[i].name === value.name){
+            console.log('name of item match');
+            this.shoppingListService.addUpdateIngredient(i, newIng)
+            break
+        }
+        else{ if(i+1 == length){
+          this.shoppingListService.ingredients.push(newIng);
+          console.log('not match')
+          break
+        }
+        }
+      }
     }
     this.editMode = false;
     form.reset();
+    
+    
   }
+  // check(form: NgForm){
+  //   //let length = this.shoppingListService.ingredients.length;
+  //   //let i = 0
+  //   let value = form.value;
+  //   //const newIng = new Ingredient (value.name, value.amount);
+  //   // for(i; i<length; i++){
+  //   //   if (this.shoppingListService.ingredients[i].name === value.){
+  //   //       console.log('true')
+  //   //   }
+  //   // }
+  //   console.log(value)
+    
+  // }
   onClear(){
     this.slForm.reset();
     this.editMode = false;
   }
   onDelete(){
-    // this.subscription = this.shoppingListService.startedEditing
-    //   .subscribe(
-    //     (index:number) => {
-    //       this.editMode = true;
-    //       this.editItemIndex = index;
-    //       this.shoppingListService.ingredients.splice(this.editItemIndex);
-    //     }
-    //   );
-    
-    
     console.log(this.editItemIndex);
     if(this.editMode){
       this.shoppingListService.ingredients.splice(this.editItemIndex, 1);

@@ -14,6 +14,9 @@ import { shoppingListService } from './shopping-list/shoppingListService';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
+import { CaloCalComponent } from './calo-cal/calo-cal.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { ColorChangeDirective } from './shared/color-change.directive';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import {FormsModule} from '@angular/forms';
     MyCartComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    CaloCalComponent,
+    HowItWorksComponent,
+    ColorChangeDirective
   ],
   imports: [
     BrowserModule,
