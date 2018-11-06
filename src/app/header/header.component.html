@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
+    <div class = "collapse navbar-collapse">
+      <a  routerLink = '/recipes' class="navbar-brand" >DietApp</a>
+      <ul class = "navbar-nav">
+        <li routerLinkActive = "active" class = "nav-item"><a  routerLink = '/HowItWorks' class = "nav-link">How it works</a></li>
+        <li class="nav-item dropdown" routerLinkActive = "active" appDropdown #r="appDropdown"> 
+          <!-- #r directive's local reference was created for able add class show to div where drop menu items located -->
+          <a class="nav-link dropdown-toggle" routerLinkActive = "active" routerLink = '/recipes'>Recipes</a>
+          <div class="dropdown-menu"[ngClass]="{'show':r.isShow}" >
+            <!-- ngClass chek if isShow true or false based on that it open or close dropdown -->
+            <a class="dropdown-item" routerLinkActive = "active" routerLink = '/recipes'>All Recipes</a>
+            <a class="dropdown-item">Breakfast recipes</a>
+            <a class="dropdown-item">Lunch recipes</a>
+            <a class="dropdown-item">Snack recipes</a>
+            <a class="dropdown-item">Dinner recipes</a>
+          </div>
+        </li>
+        <li routerLinkActive = "active" class = "nav-item"><a routerLink='/calo-cal' class = "nav-link">Colories Calculator</a></li>
+        <li routerLinkActive = "active" class = "nav-item"><a routerLink='/shopping-list' class = "nav-link">My cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+      </ul>
+    </div> 
+    <button type="button" class="btn btn-outline-success">Sign in</button>  
+  </div><!-- /.container -->
+</nav>
+      
+
+
+
+
