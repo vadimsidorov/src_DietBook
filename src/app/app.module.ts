@@ -7,7 +7,6 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { MyCartComponent } from './my-cart/my-cart.component';
 import { ShoppingListComponent } from './shopping-list/shoppingList.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { shoppingListService } from './shopping-list/shoppingListService';
@@ -19,6 +18,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { ColorChangeDirective } from './shared/color-change.directive';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +27,12 @@ import { ColorChangeDirective } from './shared/color-change.directive';
     RecipeListComponent,
     RecipeDetailComponent,
     RecipeItemComponent,
-    MyCartComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
     CaloCalComponent,
     HowItWorksComponent,
-    ColorChangeDirective
+    ColorChangeDirective,
   ],
   imports: [
     BrowserModule,
