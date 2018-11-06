@@ -18,6 +18,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { ColorChangeDirective } from './shared/color-change.directive';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { ColorChangeDirective } from './shared/color-change.directive';
     DropdownDirective,
     CaloCalComponent,
     HowItWorksComponent,
-    ColorChangeDirective
+    ColorChangeDirective,
   ],
   imports: [
     BrowserModule,
