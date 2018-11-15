@@ -6,7 +6,7 @@
         <li routerLinkActive = "active" class = "nav-item"><a  routerLink = '/HowItWorks' class = "nav-link">How it works</a></li>
         <li class="nav-item dropdown" routerLinkActive = "active" appDropdown #r="appDropdown"> 
           <!-- #r directive's local reference was created for able add class show to div where drop menu items located -->
-          <a class="nav-link dropdown-toggle" routerLinkActive = "active" routerLink = '/recipes'>Recipes</a>
+          <a class="nav-link dropdown-toggle" routerLinkActive = "active">Recipes</a>
           <div class="dropdown-menu"[ngClass]="{'show':r.isShow}" >
             <!-- ngClass chek if isShow true or false based on that it open or close dropdown -->
             <a class="dropdown-item" routerLinkActive = "active" routerLink = '/recipes'>All Recipes</a>
