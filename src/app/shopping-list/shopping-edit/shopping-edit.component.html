@@ -1,6 +1,6 @@
-<div class="container">
+<div class="row">
   <form (ngSubmit)="addOnItem(f)" #f="ngForm"> 
-<!-- #f="ngFrom" its local ref for js object of the form, so when u call addOnItem function we can pass that js object to our .ts file -->
+      <!-- #f="ngFrom" its local ref for js object of the form, so when u call addOnItem function we can pass that js object to our .ts file -->
       <div class="form-group">
         <label for="name">Name</label>
         <input
@@ -23,13 +23,9 @@
           pattern="^[1-9]+[0-9]*$">
 <!-- ngModel and name="amount" for register the controls of the form -->
       </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <button class="btn btn-success" type="submit"[disabled]="!f.valid">{{editMode ? 'Update' : 'Add'}}</button>
-        <button class="btn btn-danger" type="button" (click)="onDelete()">Delete</button>
-        <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
-      </div>
-    </div>
+      
+          <button class="btn btn-success" type="submit"[disabled]="!f.valid">{{editMode ? 'Update' : 'Add'}}</button>
+          <button class="btn btn-danger" type="button" (click)="onDelete()">Delete</button>
+          <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
   </form>
 </div>
-

@@ -34,7 +34,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       );
 
   }
-  //3.new Subjext was created, data(index of Ingredients massive) passing through, so we can subscribe to it
+  //3.new Subject was created, data(index of Ingredients massive) passing through, so we can subscribe to it
   addOnItem(form: NgForm){
     const value = form.value;
     const newIng = new Ingredient (value.name, value.amount);

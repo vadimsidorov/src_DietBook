@@ -1,10 +1,18 @@
 <div class="container">
   <h1 class="text-center">Daily calorie calculator</h1>
-  <form>
+  <form (ngSubmit)="calculate(f)" #f="ngForm">
     <div class="row">
       <div class="form-group col-2">
         <label class ="" for="age">Age</label>
-        <input class ="form-control" type="number" placeholder="Age" id="age">
+        <input 
+        onfocus="placeholder = '' "
+        onblur="placeholder = 'age'"
+        placeholder="age"
+        class ="form-control" 
+        type="number" 
+        id="age"
+        ngModel
+        name="age">
       </div>
     </div>
     <div class="row">
@@ -19,17 +27,41 @@
     <div class="row">
         <div class="form-group col-2">
           <label class ="" for="myWeight">My Weight</label>
-          <input class ="form-control" type="number" placeholder="lb" id="myWeight">
+          <input 
+          class ="form-control" 
+          type="number" 
+          onfocus="placeholder = '' "
+          onblur="placeholder = 'lb'"
+          placeholder="lb"
+          id="myWeight"
+          ngModel
+          name="weight">
         </div>
     </div>
     <div class="row">
       <div class="form-group col-2">
           <label class ="" for="heightFeet">Height feet</label>
-          <input class ="form-control" type="number" placeholder="Feet" id="heightFeet">
+          <input 
+          class ="form-control" 
+          type="number" 
+          onfocus="placeholder = '' "
+          onblur="placeholder = 'feets'"
+          placeholder="feets"          
+          id="heightFeet"
+          ngModel
+          name="heightFeet">
       </div>
       <div class="form-group col-2">
           <label class ="" for="heightInch">Height inch</label>
-          <input class ="form-control" type="number" placeholder="Inch" id="heightInch">
+          <input 
+          class ="form-control" 
+          type="number" 
+          onfocus="placeholder = '' "
+          onblur="placeholder = 'inch'" 
+          placeholder="inch"         
+          id="heightInch"
+          ngModel
+          name="heightInch">
       </div>
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>

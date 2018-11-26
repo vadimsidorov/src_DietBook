@@ -35,7 +35,7 @@ export class DropdownDirective {
         // this.isShow=!this.isShow
         // console.log(event, 'targetElement')
         // console.log(this.elementRef.nativeElement)
-        console.log(clickedInside)
+        // console.log(clickedInside)
         
         
     }
