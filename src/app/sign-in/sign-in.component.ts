@@ -1,8 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ServerService } from '../shared/server.service';
-import { Router } from '@angular/router';
-import { ErrorInterceptor } from '../shared/error-interceptor';
 import { Subscription } from 'rxjs';
 
 @Component({
