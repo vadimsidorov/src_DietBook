@@ -1,69 +1,90 @@
 <div class="container">
   <h1 class="text-center">Daily calorie calculator</h1>
-  <form (ngSubmit)="calculate(f)" #f="ngForm">
-    <div class="row">
-      <div class="form-group col-2">
-        <label class ="" for="age">Age</label>
-        <input 
-        onfocus="placeholder = '' "
-        onblur="placeholder = 'age'"
-        placeholder="age"
-        class ="form-control" 
-        type="number" 
-        id="age"
-        ngModel
-        name="age">
-      </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-2" >
-          <label class ="" for="gender">Gender</label>
-          <select class="form-control" id="gender" >
-              <option>Male</option>
-              <option>Female</option>
-          </select>
-      </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-2">
-          <label class ="" for="myWeight">My Weight</label>
-          <input 
-          class ="form-control" 
-          type="number" 
-          onfocus="placeholder = '' "
-          onblur="placeholder = 'lb'"
-          placeholder="lb"
-          id="myWeight"
-          ngModel
-          name="weight">
+  <div class="row">
+    <div class="col-8">
+      <form (ngSubmit)="calculate(f)" #f="ngForm">
+        <div class="row">
+          <div class="form-group col-4">
+            <label class ="" for="age">Age</label>
+            <input
+            onfocus="placeholder = '' "
+            onblur="placeholder = 'age'"
+            placeholder="age"
+            name="age"
+            id="age"
+            ngModel
+            #age="ngModel"
+            class ="form-control"
+            type="number"
+            required
+            [ngClass]="{'is-invalid': age.invalid && age.touched}"
+            >
+          </div>
         </div>
+        <div class="row">
+          <div class="form-group col-4" >
+              <label class ="" for="gender">Gender</label>
+              <select class="form-control" id="gender" >
+                  <option>Male</option>
+                  <option>Female</option>
+              </select>
+          </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-4">
+              <label class ="" for="myWeight">My Weight</label>
+              <input
+              class ="form-control"
+              type="number"
+              onfocus="placeholder = '' "
+              onblur="placeholder = 'lb'"
+              placeholder="lb"
+              id="myWeight"
+              ngModel
+              required
+              name="weight"
+              #weight="ngModel"
+              [ngClass]="{'is-invalid': weight.invalid && weight.touched}">
+            </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-4">
+              <label class ="" for="heightFeet">Height feet</label>
+              <input
+              class ="form-control"
+              type="number"
+              onfocus="placeholder = '' "
+              onblur="placeholder = 'feets'"
+              placeholder="feets"
+              id="heightFeet"
+              ngModel
+              name="heightFeet"
+              required
+              #heightFeet="ngModel"
+              [ngClass]="{'is-invalid': heightFeet.invalid && heightFeet.touched}">
+          </div>
+          <div class="form-group col-4">
+              <label class ="" for="heightInch">Height inch</label>
+              <input
+              class ="form-control"
+              type="number"
+              onfocus="placeholder = '' "
+              onblur="placeholder = 'inches'"
+              placeholder="inch"
+              id="heightInch"
+              ngModel
+              required
+              name="heightInch"
+              #heightInch="ngModel"
+              [ngClass]="{'is-invalid': heightInch.invalid && heightInch.touched}">
+          </div>
+        </div>
+        <button class="btn btn-success" type="submit" [disabled]=!f.valid>Submit</button>
+      </form>
     </div>
-    <div class="row">
-      <div class="form-group col-2">
-          <label class ="" for="heightFeet">Height feet</label>
-          <input 
-          class ="form-control" 
-          type="number" 
-          onfocus="placeholder = '' "
-          onblur="placeholder = 'feets'"
-          placeholder="feets"          
-          id="heightFeet"
-          ngModel
-          name="heightFeet">
-      </div>
-      <div class="form-group col-2">
-          <label class ="" for="heightInch">Height inch</label>
-          <input 
-          class ="form-control" 
-          type="number" 
-          onfocus="placeholder = '' "
-          onblur="placeholder = 'inch'" 
-          placeholder="inch"         
-          id="heightInch"
-          ngModel
-          name="heightInch">
-      </div>
+    <div class="col-4">
+      <h2>Your daily callories is:</h2>
+      <h3>{{calAmount}}</h3>
     </div>
-    <button class="btn btn-primary" type="submit">Submit</button>
-  </form>
+  </div>
 </div>

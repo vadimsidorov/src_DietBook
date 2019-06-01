@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col-xs-12 col-sm-10 col-md-8">
+    <form (ngSubmit)="onSignIn(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              email
+              required
+              ngModel
+              class="form-control"
+              #email="ngModel"
+              [ngClass]="{'is-invalid': email.invalid && email.touched}">
+            <small class="form-text text-muted" *ngIf="email.invalid && email.touched">Please enter a valid e-mail</small>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              ngModel
+              minlength="6"
+              class="form-control"
+              #password="ngModel"
+              [ngClass]="{'is-invalid': password.invalid && password.touched}">
+            <small class="form-text text-muted" *ngIf="password.invalid && password.touched">Password have to be at least 6 characters</small>
+          </div>
+        <button class="btn btn-outline-success" type="submit" [disabled]='f.invalid'>Sign In</button>
+        <small class="form-text text-danger" *ngIf=isError>E-mail or password are incorrect, please try again</small>
+      </form>
+  </div>
+</div>
+<div class="row row justify-content-center">
+    <a class="text-success" routerLink = '/signUp'>Don't have an acoount yet? Sign Up</a>
+</div>
+
+

@@ -20,7 +20,13 @@ import { RecipeListBreakFastComponent } from './recipes/recipe-list-break-fast/r
 import { RecipeListLunchComponent } from './recipes/recipe-list-lunch/recipe-list-lunch.component';
 import { RecipeListSnackComponent } from './recipes/recipe-list-snack/recipe-list-snack.component';
 import { RecipeListDinnerComponent } from './recipes/recipe-list-dinner/recipe-list-dinner.component';
-
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ServerService } from './shared/server.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UserPageComponent } from './user-page/user-page.component';
+import { AuthInterceptor } from './shared/auth-interceptor';
+import { ErrorInterceptor } from './shared/error-interceptor';
 
 
 @NgModule({
@@ -41,13 +47,22 @@ import { RecipeListDinnerComponent } from './recipes/recipe-list-dinner/recipe-l
     RecipeListLunchComponent,
     RecipeListSnackComponent,
     RecipeListDinnerComponent,
+    SignInComponent,
+    SignUpComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [shoppingListService],
+  providers: [
+    shoppingListService,
+    ServerService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

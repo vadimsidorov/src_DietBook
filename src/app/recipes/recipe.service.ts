@@ -2,14 +2,16 @@ import { Recipe } from "./recipe-list/recipe-item/recipe.model";
 import{ EventEmitter, Injectable } from "@angular/core"
 import { Ingredient } from "../shared/ingredient.model";
 import { shoppingListService } from "../shopping-list/shoppingListService";
+import { TouchSequence } from "selenium-webdriver";
 
 @Injectable()
 //@Ingectable for able to inject one service to another
 export class RecipeService{
+    grid:boolean = false;
     public recipeSelected = new EventEmitter<Recipe>();
     private recipes: Recipe[] = [
         new Recipe(
-            'GRILLED STEAK WITH VEGIES', 
+            'GRILLED STEAK ', 
             'Good dinne plate',
             'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1950&q=80',
             [new Ingredient('Banana', 10),
@@ -63,4 +65,13 @@ export class RecipeService{
         this.slService.addIngredients(ingredients)
         
     } 
+    listView(){
+        this.grid = true;
+        console.log('listView')
+    }
+    gridView(){
+        this.grid = false;
+        console.log('gridView')
+    }
+
 }

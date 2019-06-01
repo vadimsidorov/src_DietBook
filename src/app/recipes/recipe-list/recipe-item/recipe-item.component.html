@@ -13,8 +13,9 @@
           style="max-height: 50px;">
       </span>
 </a> -->
-<a class="" (click)="onSelected()">
-  <div class="card mb-3">
+
+<!-- <a class="" (click)="onSelected()">
+  <div class="mb-5">
     <img [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-height: 250px;" class="card-img-top">
     <div class="card-body">
       <h4 class="card-title">
@@ -25,4 +26,19 @@
       </p>
     </div>
   </div>
-</a>
+</a> -->
+
+    <a class="" (click)="onSelected()">
+        <div class="card mb-5">
+          <img [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-height: 250px;" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">
+              {{recipe.name}}
+            </h4>
+            <p class="card-text">
+              {{recipe.description}}
+            </p>
+          </div>
+        </div>
+      </a>
+<!-- <p [ngClass]="{'d-inline bg-success':xxx}">some text</p> -->

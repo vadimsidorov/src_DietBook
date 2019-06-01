@@ -1,10 +1,12 @@
-
-<div class="row scroll">
-  <div class="col">
-    <app-recipe-item
-      *ngFor="let recipeEl of recipes"
-      [recipe]="recipeEl"
-      ></app-recipe-item>
-  </div>
+<div class="row" [ngClass]="{'scroll':!grid}">
+    <app-recipe-item [ngClass]="{'col-4':grid}"
+    *ngFor="let recipeEl of recipes"
+    [recipe]="recipeEl">
+  </app-recipe-item>
 </div>
+
+
+    
+
+
 

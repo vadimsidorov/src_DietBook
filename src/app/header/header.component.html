@@ -4,7 +4,7 @@
       <a  routerLink = '/recipes' class="navbar-brand" >DietApp</a>
       <ul class = "navbar-nav">
         <li routerLinkActive = "active" class = "nav-item"><a  routerLink = '/HowItWorks' class = "nav-link">How it works</a></li>
-        <li class="nav-item dropdown" routerLinkActive = "active" appDropdown #r="appDropdown"> 
+        <li class="nav-item dropdown" routerLinkActive = "active" appDropdown #r="appDropdown">
           <!-- #r directive's local reference was created for able add class show to div where drop menu items located -->
           <a class="nav-link dropdown-toggle pointer" routerLinkActive = "active">Recipes</a>
           <div class="dropdown-menu "[ngClass]="{'show':r.isShow}">
@@ -17,13 +17,15 @@
           </div>
         </li>
         <li routerLinkActive = "active" class = "nav-item"><a routerLink='/calo-cal' class = "nav-link">Colories Calculator</a></li>
-        <li routerLinkActive = "active" class = "nav-item"><a routerLink='/shopping-list' class = "nav-link">My cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+        <li routerLinkActive = "active" class = "nav-item"><a routerLink='/shopping-list' class = "nav-link">My cart <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a></li>
+        <li routerLinkActive = "active" class = "nav-item"><a routerLink='/user' class = "nav-link" *ngIf="userIsAuth">My Account</a></li>
       </ul>
-    </div> 
-    <button type="button" class="btn btn-outline-success">Sign in</button>  
+    </div>
+    <button type="button" class="btn btn-outline-success" (click)="sign()" *ngIf="!userIsAuth">Sign in</button>
+    <button type="button" class="btn btn-outline-success" (click)="signOut()" *ngIf="userIsAuth">Sign out</button>
   </div><!-- /.container -->
 </nav>
-      
+
 
 
 
